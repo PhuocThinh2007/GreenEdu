@@ -1,4 +1,4 @@
-<img src="https://github.com/tuanna-kite/GreenEdu/blob/main/demo/app-icon.jpg?raw=true" width="100" height="100">
+<img src="./assets/icon.png" width="100" height="100">
 
 # **GreenEdu Application**
 
@@ -9,15 +9,29 @@
 ## Key Features
 
 - **Topic-Based Learning**: Lectures are divided into various topics such as land environment, water environment, and more, making it easy for children to explore different aspects of environmental science.
+
 - **Curated Content**: All lectures are carefully selected and developed before being posted on the app, ensuring that children receive accurate and quality educational materials.
-![DEMO](https://github.com/tuanna-kite/GreenEdu/blob/main/demo/demo1.png?raw=true)
 
 - **Interactive Quizzes**: After each lesson, children can take multiple choice exercises to assess their understanding of the topic.
-![DEMO](https://github.com/tuanna-kite/GreenEdu/blob/main/demo/demo2.png?raw=true)
 
 - **Environmental Activities and Stories**: The app includes a collection of social activities related to environmental protection and inspiring stories that promote empathy and environmental awareness among children.
 
-![DEMO](https://github.com/tuanna-kite/GreenEdu/blob/main/demo/demo3.png?raw=true)
+<div>
+    <img src="./assets/demo/1-1.png" width="200" alt="demo1">
+    <img src="./assets/demo/1-2.png" width="200" alt="demo1">
+    <img src="./assets/demo/1-3.png" width="200" alt="demo1">
+    <img src="./assets/demo/1-4.png" width="200" alt="demo1">
+    <img src="./assets/demo/1-5.png" width="200" alt="demo1">
+    <img src="./assets/demo/2-1.png" width="200" alt="demo1">
+    <img src="./assets/demo/2-2.png" width="200" alt="demo1">
+    <img src="./assets/demo/2-3.png" width="200" alt="demo1">
+    <img src="./assets/demo/3-1.png" width="200" alt="demo1">
+    <img src="./assets/demo/3-2.png" width="200" alt="demo1">
+    <img src="./assets/demo/3-3.png" width="200" alt="demo1">
+    <img src="./assets/demo/3-4.png" width="200" alt="demo1">
+    <img src="./assets/demo/4-1.png" width="200" alt="demo1">
+    <img src="./assets/demo/4-2.png" width="200" alt="demo1">
+</div>
 
 ## Technology Stack
 

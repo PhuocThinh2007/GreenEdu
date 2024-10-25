@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-template",
-    "slug": "expo-template",
+    "name": "edu-green",
+    "slug": "edu-green",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -29,7 +29,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "44fc26b5-7003-4ef0-baaf-166c61209456"
+        "projectId": "4f6bb4cb-69fb-48ab-909c-a200fcb5a1b6"
       }
     }
   }

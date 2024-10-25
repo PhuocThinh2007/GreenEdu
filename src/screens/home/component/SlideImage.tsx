@@ -13,11 +13,14 @@ const SlideImage = (props: SlideProps) => {
   const { data, ...rest } = props;
   const [slideIndex, setSlideIndex] = useState(0);
   return (
-    <VStack alignItems={"center"} gap={"$2"}>
+    <VStack alignItems={"center"} gap={"$2"} mt={"$6"}>
       <Carousel
         data={data}
         renderItem={({ item, index }) => (
-          <MemberImage {...item} key={item.name ? item.name : `item${index}`} />
+          <MemberImage
+            {...item}
+            key={item.title ? item.title : `item${index}`}
+          />
         )}
         itemWidth={Math.round(screenWidth * 0.8)}
         sliderWidth={screenWidth}

@@ -3,6 +3,7 @@ import {
   TouchableOpacity,
   StatusBar,
   Platform,
+  ScrollView,
 } from "react-native";
 import { Image, Box, VStack, Text, HStack } from "@gluestack-ui/themed";
 import React from "react";
@@ -29,7 +30,9 @@ const PracticeCard = ({ item, index }: { item: IActivity; index: number }) => {
           w={"$40"}
           h={"$32"}
           alt="img-practice"
-          source={require("../../assets/env/story1.png")}
+          source={{
+            uri: item.image,
+          }}
         />
       </Box>
       <VStack gap="$1" flex={1}>
@@ -71,18 +74,20 @@ const Practice = ({ navigation }: Props) => {
       bg="$white"
     >
       {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
-      <HStack flexWrap="wrap">
-        <Box w="$full" mb={"$4"}>
-          {activityList.map((activity, index) => (
-            <TouchableOpacity
-              key={activity.id}
-              onPress={() => onPracticeDetail(activity.id)}
-            >
-              <PracticeCard item={activity} index={index + 1} />
-            </TouchableOpacity>
-          ))}
-        </Box>
-      </HStack>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <HStack flexWrap="wrap">
+          <Box w="$full" mb={"$4"}>
+            {activityList.map((activity, index) => (
+              <TouchableOpacity
+                key={activity.id}
+                onPress={() => onPracticeDetail(activity.id)}
+              >
+                <PracticeCard item={activity} index={index + 1} />
+              </TouchableOpacity>
+            ))}
+          </Box>
+        </HStack>
+      </ScrollView>
     </VStack>
   );
 };

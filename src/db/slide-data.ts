@@ -1,3 +1,4 @@
+import { MemberImageProps } from "../screens/home/component/MemberImage";
 import { IData } from "../types";
 
 export enum EDataType {
@@ -5,7 +6,6 @@ export enum EDataType {
   STORY,
   ACTIVITY,
 }
-
 
 export interface IObjectData {
   [key: string]: IData;
@@ -419,6 +419,191 @@ export const activity: IObjectActivity = {
       "Giáo dục về tái chế: Học sinh sẽ hiểu được tầm quan trọng của việc tái chế và giảm thiểu rác thải nhựa.",
       "Bảo vệ môi trường: Trồng cây giúp làm xanh sạch môi trường, cải thiện chất lượng không khí.",
       "Kỹ năng sống: Học sinh học được cách chăm sóc cây, trách nhiệm và kiên nhẫn.",
+    ],
+  },
+  2: {
+    id: 2,
+    title: "Làm chong chóng từ ống hút nhựa",
+    image:
+      "http://mncamlinhb.edu.vn/upload/48857/fck/01271341/2024_03_16_13_51_0669.jpg",
+    target: "Trẻ em",
+    material: [
+      "Ống hút nhựa",
+      "Giấy cứng",
+      "Kim chỉ",
+      "Keo dán",
+      "Bút màu",
+      "Kéo",
+    ],
+    instructions: [
+      {
+        title: "Bước 1: Chuẩn bị ống hút",
+        body: [
+          "Lựa chọn các ống hút có kích thước và màu sắc khác nhau để làm cánh chong chóng.",
+          "Cắt ống hút thành những đoạn ngắn để phù hợp với kích thước mong muốn.",
+        ],
+        image: "https://example.com/images/step1-windmill.jpg",
+      },
+      {
+        title: "Bước 2: Làm cánh chong chóng",
+        body: [
+          "Cắt giấy cứng thành hình tam giác hoặc hình tròn.",
+          "Gắn các ống hút vào các cạnh của hình giấy để tạo thành cánh chong chóng.",
+        ],
+        image: "https://example.com/images/step2-windmill.jpg",
+      },
+      {
+        title: "Bước 3: Trang trí",
+        body: [
+          "Trang trí chong chóng bằng cách dùng bút màu vẽ hoa văn trên giấy.",
+        ],
+        image: "https://example.com/images/step3-windmill.jpg",
+      },
+      {
+        title: "Bước 4: Gắn kim chỉ",
+        body: [
+          "Dùng kim chỉ để xuyên qua tâm của cánh chong chóng và gắn nó vào tay cầm.",
+          "Kiểm tra xem chong chóng có quay trơn tru không, điều chỉnh nếu cần.",
+        ],
+        image: "https://example.com/images/step4-windmill.jpg",
+      },
+    ],
+    benefit: [
+      "Phát triển kỹ năng thủ công: Trẻ sẽ học được cách làm chong chóng từ nguyên liệu tái chế.",
+      "Giáo dục về tái chế: Trẻ hiểu được cách sử dụng lại ống hút nhựa thay vì vứt đi.",
+      "Kích thích sáng tạo: Trẻ có thể tự do trang trí và thiết kế chong chóng của mình.",
+    ],
+  },
+  3: {
+    id: 3,
+    title: "Làm lồng đèn từ chai nhựa",
+    image:
+      "https://cdn.pastaxi-manager.onepas.vn/content/uploads/articles/Thanh%20Mai%20MKT/C%C3%A2y%20Trung%20thu/Thi%E1%BA%BFt%20k%E1%BA%BF%20ch%C6%B0a%20c%C3%B3%20t%C3%AAn%20(79).jpg",
+    target: "Học sinh tiểu học",
+    material: [
+      "Chai nhựa",
+      "Giấy màu",
+      "Keo dán",
+      "Bút màu",
+      "Dao rọc giấy",
+      "Đèn LED nhỏ",
+    ],
+    instructions: [
+      {
+        title: "Bước 1: Chuẩn bị chai nhựa",
+        body: [
+          "Làm sạch và cắt chai nhựa theo hình dáng lồng đèn mong muốn. Có thể cắt ngang hoặc cắt dọc tùy theo thiết kế.",
+        ],
+        image: "https://example.com/images/step1-lantern.jpg",
+      },
+      {
+        title: "Bước 2: Trang trí lồng đèn",
+        body: [
+          "Sử dụng giấy màu, bút vẽ để trang trí mặt ngoài của chai nhựa.",
+          "Có thể dán các họa tiết như sao, trăng hoặc các hình trang trí khác.",
+        ],
+        image: "https://example.com/images/step2-lantern.jpg",
+      },
+      {
+        title: "Bước 3: Thêm đèn LED",
+        body: [
+          "Đặt đèn LED nhỏ vào trong chai nhựa để tạo ánh sáng cho lồng đèn.",
+        ],
+        image: "https://example.com/images/step3-lantern.jpg",
+      },
+      {
+        title: "Bước 4: Hoàn thiện",
+        body: [
+          "Kiểm tra lại lồng đèn, đảm bảo mọi chi tiết được dán chắc chắn. Lồng đèn có thể sử dụng để trang trí hoặc thắp sáng trong các dịp lễ.",
+        ],
+        image: "https://example.com/images/step4-lantern.jpg",
+      },
+    ],
+    benefit: [
+      "Kích thích sáng tạo: Học sinh có cơ hội tự do sáng tạo trong việc thiết kế lồng đèn của riêng mình.",
+      "Kỹ năng thủ công: Học sinh học được cách tái chế chai nhựa thành vật dụng trang trí.",
+      "Ý thức bảo vệ môi trường: Giảm thiểu việc sử dụng đèn nhựa thương mại, tăng cường việc tái chế.",
+    ],
+  },
+  4: {
+    id: 4,
+    title: "Làm bẫy bắt muỗi từ chai nhựa",
+    image: "https://image.baophapluat.vn/w840/Uploaded/2024/carwqwrwq/2018_05_19/0_UXBO.jpg",
+    target: "Học sinh trung học",
+    material: [
+      "Chai nhựa",
+      "Đường",
+      "Men nở",
+      "Nước ấm",
+      "Keo dán",
+      "Giấy đen hoặc vải đen",
+    ],
+    instructions: [
+      {
+        title: "Bước 1: Chuẩn bị chai nhựa",
+        body: ["Cắt chai nhựa làm đôi, giữ lại cả hai phần."],
+        image: "https://example.com/images/step1-mosquito.jpg",
+      },
+      {
+        title: "Bước 2: Chuẩn bị dung dịch bắt muỗi",
+        body: [
+          "Hòa tan đường vào nước ấm, sau đó thêm men nở. Dung dịch này sẽ phát ra khí CO2, thu hút muỗi.",
+        ],
+        image: "https://example.com/images/step2-mosquito.jpg",
+      },
+      {
+        title: "Bước 3: Lắp bẫy",
+        body: [
+          "Đổ dung dịch vào phần đáy chai, đặt phần đầu chai úp ngược vào để tạo thành một phễu.",
+          "Dán kín các mép bằng keo để muỗi không thể thoát ra ngoài.",
+        ],
+        image: "https://example.com/images/step3-mosquito.jpg",
+      },
+      {
+        title: "Bước 4: Bọc chai nhựa",
+        body: [
+          "Dùng giấy đen hoặc vải đen bọc quanh chai để làm tối không gian bên trong, giúp thu hút muỗi hơn.",
+        ],
+        image: "https://example.com/images/step4-mosquito.jpg",
+      },
+    ],
+    benefit: [
+      "Giảm muỗi trong nhà: Bẫy giúp thu hút và bắt muỗi một cách hiệu quả.",
+      "Bảo vệ sức khỏe: Giảm nguy cơ mắc các bệnh do muỗi truyền như sốt xuất huyết.",
+      "Giáo dục về khoa học: Học sinh sẽ hiểu về quy trình tạo ra CO2 và cách nó thu hút muỗi.",
+    ],
+  },
+  5: {
+    id: 5,
+    title: "Làm vật nuôi mini từ chai nhựa",
+    image: "https://cdn.tgdd.vn//News/0//lam-do-choi-bang-chai-nhua-thanh-ong-heo-845x564.jpg",
+    target: "Học sinh tiểu học",
+    material: ["Chai nhựa", "Màu vẽ", "Keo dán", "Giấy", "Bút màu"],
+    instructions: [
+      {
+        title: "Bước 1: Chuẩn bị chai nhựa",
+        body: [
+          "Làm sạch chai nhựa và cắt chúng thành hình dạng của các con vật, như con thỏ, con mèo hoặc con lợn.",
+        ],
+        image: "https://example.com/images/step1-pet.jpg",
+      },
+      {
+        title: "Bước 2: Trang trí",
+        body: ["Dùng bút màu và giấy để vẽ và trang trí tạo hình cho con vật."],
+        image: "https://example.com/images/step2-pet.jpg",
+      },
+      {
+        title: "Bước 3: Hoàn thiện",
+        body: [
+          "Dán thêm các chi tiết như tai, mắt và mũi để làm cho con vật thêm sinh động.",
+        ],
+        image: "https://example.com/images/step3-pet.jpg",
+      },
+    ],
+    benefit: [
+      "Phát triển sáng tạo: Học sinh có thể tự do sáng tạo hình dạng và trang trí con vật.",
+      "Giáo dục về tái chế: Sử dụng lại chai nhựa để làm đồ chơi hoặc vật trang trí.",
+      "Kỹ năng thủ công: Học sinh học cách cắt dán và trang trí từ các vật liệu đơn giản.",
     ],
   },
 };

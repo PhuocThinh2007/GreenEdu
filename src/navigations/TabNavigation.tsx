@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import React from "react";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
+import React, { useEffect, useRef } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/home/Home";
 import { Text, VStack } from "@gluestack-ui/themed";
@@ -9,34 +9,82 @@ import Quizz from "../screens/quizz-mode/Quizz";
 import Practice from "../screens/practice/Practice";
 import Puzzle from "../screens/puzzle/Puzzle";
 import { UseTokenColor } from "../hook/UseTokenColor";
+import * as Animatable from "react-native-animatable";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const Tab = createBottomTabNavigator<BottomTabsParams>();
 
+const animate1 = {
+  0: { scale: 0.5, translateY: 7 },
+  0.92: { translateY: -34 },
+  1: { scale: 1.2, translateY: -24 },
+};
+const animate2 = {
+  0: { scale: 1.2, translateY: -24 },
+  1: { scale: 1, translateY: 7 },
+};
+
+const circle1 = {
+  0: { scale: 0 },
+  0.3: { scale: 0.9 },
+  0.5: { scale: 0.2 },
+  0.8: { scale: 0.7 },
+  1: { scale: 1 },
+};
+const circle2 = { 0: { scale: 1 }, 1: { scale: 0 } };
 interface ITabIcon {
   focused: boolean;
   name: keyof typeof Ionicons.glyphMap;
   title: string;
+  onPress: any;
 }
-const TabIcon = ({ focused, name, title }: ITabIcon) => {
+const TabIcon = ({ focused, name, title, onPress }: ITabIcon) => {
   const colors = UseTokenColor();
+  const viewRef = useRef<any>(null);
+  const circleRef = useRef<any>(null);
+  const textRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (focused) {
+      viewRef.current.animate(animate1);
+      circleRef.current.animate(circle1);
+      textRef.current.transitionTo({ scale: 1 });
+    } else {
+      viewRef.current.animate(animate2);
+      circleRef.current.animate(circle2);
+      textRef.current.transitionTo({ scale: 0 });
+    }
+  }, [focused]);
   return (
-    <VStack alignItems={"center"}>
-      <Ionicons
-        name={name}
-        size={20}
-        color={focused ? colors.primary600 : colors.warmGray600}
-      />
-      <Text
-        fontSize={10}
-        fontWeight={"$medium"}
-        color={focused ? colors.primary600 : colors.warmGray600}
-      >
-        {title}
-      </Text>
-    </VStack>
+    <TouchableOpacity
+      activeOpacity={1}
+      style={styles.container}
+      onPress={onPress}
+    >
+      <Animatable.View ref={viewRef} duration={500} style={styles.container}>
+        <View
+          style={[
+            styles.btn,
+            {
+              borderColor: colors.white,
+              backgroundColor: colors.white,
+            },
+          ]}
+        >
+          <Animatable.View ref={circleRef} style={styles.circle} />
+          <Ionicons
+            name={name}
+            size={20}
+            color={focused ? colors.white : colors.primary600}
+          />
+        </View>
+        <Animatable.Text ref={textRef} style={[styles.text]}>
+          {title}
+        </Animatable.Text>
+      </Animatable.View>
+    </TouchableOpacity>
   );
 };
-
 interface ITabData {
   id: number;
   tabName: keyof BottomTabsParams;
@@ -75,15 +123,17 @@ export const TabData: ITabData[] = [
     component: Puzzle,
   },
 ];
+const colors = UseTokenColor();
 
 const TabNavigation = () => {
-  const colors = UseTokenColor();
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: {},
+        tabBarStyle: {
+          backgroundColor: colors.primary600,
+        },
       }}
     >
       {TabData.map((tab) => (
@@ -92,20 +142,21 @@ const TabNavigation = () => {
           name={tab.tabName}
           component={tab.component}
           options={{
-            tabBarIcon: ({ focused }) => (
+            tabBarButton: ({ onPress, accessibilityState }) => (
               <TabIcon
-                focused={focused}
+                focused={accessibilityState?.selected ?? false}
                 name={tab.iconName}
                 title={tab.title}
+                onPress={onPress}
               />
             ),
             headerShown: true,
             title: tab.title,
             headerStyle: {
-              backgroundColor: colors.white,
+              backgroundColor: colors.primary600,
             },
             headerTitleStyle: {
-              color: colors.primary600,
+              color: colors.white,
             },
           }}
         />
@@ -116,4 +167,41 @@ const TabNavigation = () => {
 
 export default TabNavigation;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    height: 70,
+  },
+  tabBar: {
+    height: 70,
+    position: "absolute",
+    margin: 16,
+    borderRadius: 16,
+  },
+  btn: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    borderWidth: 4,
+    borderColor: Colors.white,
+    backgroundColor: Colors.white,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  circle: {
+    ...StyleSheet.absoluteFillObject,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.primary600,
+    borderRadius: 25,
+  },
+  text: {
+    fontSize: 16,
+    textAlign: "center",
+    color: colors.white,
+    fontWeight: "500",
+    marginTop: 5,
+  },
+});

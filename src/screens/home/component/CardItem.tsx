@@ -11,7 +11,7 @@ type Props = {
 };
 
 const { width, height } = Dimensions.get("screen");
-const cardWidth = width / 2 - 24;
+const cardWidth = width - 24;
 
 const CardItem = ({ item, type }: Props) => {
   const navigation = useNavigation<any>();
@@ -19,6 +19,7 @@ const CardItem = ({ item, type }: Props) => {
     <TouchableOpacity
       key={item.id}
       activeOpacity={0.8}
+      style={styles.bgCard}
       onPress={() =>
         navigation.navigate("Detail", {
           id: item.id,
@@ -26,25 +27,27 @@ const CardItem = ({ item, type }: Props) => {
         })
       }
     >
-      <VStack gap={"$3"} width={cardWidth}>
+      <VStack>
         <Image
           source={item.image}
           rounded={"$xl"}
           alt="image"
-          width={cardWidth}
-          height={cardWidth}
+          style={styles.img}
         />
-        <Text
-          fontSize={"$md"}
-          fontWeight="$semibold"
-          ellipsizeMode="tail"
-          numberOfLines={2}
-        >
-          {item.title}
-        </Text>
-        <Text ellipsizeMode="tail" numberOfLines={2} color={"$coolGray500"}>
-          {item.description}
-        </Text>
+        <VStack gap={"$2"} p={"$4"}>
+          <Text
+            fontSize={"$xl"}
+            fontWeight="$semibold"
+            color="$black"
+            ellipsizeMode="tail"
+            numberOfLines={2}
+          >
+            {item.title}
+          </Text>
+          <Text ellipsizeMode="tail" numberOfLines={2} color={"$coolGray500"}>
+            {item.description}
+          </Text>
+        </VStack>
       </VStack>
     </TouchableOpacity>
   );
@@ -52,4 +55,16 @@ const CardItem = ({ item, type }: Props) => {
 
 export default CardItem;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  bgCard: {
+    width: cardWidth,
+    backgroundColor: "#fff",
+    borderRadius: 12,
+  },
+  img: {
+    width: "100%",
+    height: 150,
+    borderRadius: 12,
+    margin: "auto",
+  },
+});
