@@ -9,6 +9,8 @@ import React from "react";
 import { Box, Image, Text, VStack, View } from "@gluestack-ui/themed";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { quizzData } from "../../db/quizz";
+import LottieView from 'lottie-react-native';
+
 
 const show: { [key: string]: string } = {
   easy: "Easy",
@@ -26,13 +28,13 @@ const RETURN_RESULT = {
     title: "Xin chúc mừng!",
     description: "Bạn đã trả lời đúng",
     color: "#16A34A",
-    logo: require("../../assets/good_logo.png"),
+    logo: require("../../assets/Correct.json"),
   },
   [EResultType.BAD]: {
     title: "Rất tiếc!",
     description: "Bạn không trả lời đúng câu nào",
     color: "#EF4444",
-    logo: require("../../assets/bad_logo.png"),
+    logo: require("../../assets/Incorrect.json"),
   },
 };
 
@@ -41,6 +43,7 @@ const QuizzResult = () => {
   const { point, length } = route.params;
   const navigation = useNavigation<any>();
   let result = point > length / 2 ? EResultType.GOOD : EResultType.BAD;
+
 
   return (
     <VStack
@@ -52,7 +55,16 @@ const QuizzResult = () => {
       gap={"$3"}
     >
       {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
-      <Image source={RETURN_RESULT[result].logo} alt="logo" />
+      <LottieView
+        autoPlay
+        style={{
+          width: "auto",
+          height: 100,
+          backgroundColor: '#eee',
+        }}
+        // Find more Lottie files at https://lottiefiles.com/featured
+        source={RETURN_RESULT[result].logo}
+      />
       <VStack gap={"$1"}>
         <Text
           textAlign="center"

@@ -5,8 +5,10 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Image, Box, Text, VStack } from "@gluestack-ui/themed";
-import React from "react";
+import React, { useRef } from "react";
 import { useNavigation } from "@react-navigation/native";
+import LottieView from 'lottie-react-native';
+
 
 interface LevelInfo {
   text: string;
@@ -23,6 +25,8 @@ const OPTION_COLOR = ["#78C819", "#FFA800", "#EF4444"];
 
 const Quizz = () => {
   const navigation = useNavigation<any>();
+  const animation = useRef<LottieView>(null);
+
   return (
     <VStack
       flex={1}
@@ -33,12 +37,15 @@ const Quizz = () => {
       bg="$white"
     >
       {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
-      <Image
-        source={require("../../assets/env/question_logo.png")}
-        w="$full"
-        height={200}
-        resizeMode="contain"
-        alt="logo"
+      <LottieView
+        autoPlay
+        style={{
+          width: "auto",
+          height: 200,
+          backgroundColor: '#eee',
+        }}
+        // Find more Lottie files at https://lottiefiles.com/featured
+        source={require('../../assets/QuestionMark.json')}
       />
       <VStack gap={"$6"}>
         {levels.map((info, index) => (

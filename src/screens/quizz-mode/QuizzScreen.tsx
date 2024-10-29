@@ -1,18 +1,26 @@
 import { StyleSheet, Dimensions } from "react-native";
 import { Button, Text, Image, Box, View, VStack } from "@gluestack-ui/themed";
-import React, { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useRoute } from "@react-navigation/native";
 import { quizzData } from "../../db/quizz";
 import TextBox, { EStatus } from "../../components/common/TextBox";
 import { getRandomArray } from "../../utils/function";
+import LottieView from "lottie-react-native";
 
 const show: { [key: string]: string } = {
   easy: "Dễ",
   medium: "Trung bình",
   hard: "Khó",
 };
-
+const Animation = [
+  require("../../assets/Animation0.json"),
+  require("../../assets/Animation1.json"),
+  require("../../assets/Animation2.json"),
+  require("../../assets/Animation3.json"),
+  require("../../assets/Animation4.json"),
+  require("../../assets/Animation5.json"),
+];
 const QuizzScreen = () => {
   const [status, setStatus] = useState<EStatus[]>([
     EStatus.NORMAL,
@@ -21,6 +29,7 @@ const QuizzScreen = () => {
   ]);
   const [next, setNext] = useState(false);
   const [point, setPoint] = useState(0);
+  const animation = useRef<LottieView>(null);
 
   const route = useRoute<any>();
   const navigation = useNavigation<any>();
@@ -102,6 +111,15 @@ const QuizzScreen = () => {
               />
             ))}
           </Box>
+          <LottieView
+            autoPlay
+            style={{
+              width: "auto",
+              height: 200,
+              backgroundColor: "#eee",
+            }}
+            source={getRandomArray(Animation, 1)[0]}
+          />
         </VStack>
       </VStack>
       <Box height={50} px={"$4"} my={"$4"}>
