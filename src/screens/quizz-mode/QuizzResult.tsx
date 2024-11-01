@@ -58,9 +58,9 @@ const QuizzResult = () => {
       <LottieView
         autoPlay
         style={{
-          width: "auto",
+          width: "100%",
           height: 100,
-          backgroundColor: '#eee',
+          backgroundColor: '#fff',
         }}
         // Find more Lottie files at https://lottiefiles.com/featured
         source={RETURN_RESULT[result].logo}

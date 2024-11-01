@@ -42,7 +42,7 @@ const Quizz = () => {
         style={{
           width: "auto",
           height: 200,
-          backgroundColor: '#eee',
+          backgroundColor: '#fff',
         }}
         // Find more Lottie files at https://lottiefiles.com/featured
         source={require('../../assets/QuestionMark.json')}

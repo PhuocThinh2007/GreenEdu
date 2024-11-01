@@ -99,7 +99,7 @@ export const basic: IObjectData = {
   },
   3: {
     id: 3,
-    image: require("../assets/env/pollution3.png"),
+    image: require("../assets/env/pollution3.jpg"),
     title: "Ô nhiễm tiếng ồn",
     description:
       "Là sự phát ra của các âm thanh không mong muốn hoặc quá lớn từ các nguồn như giao thông, công trình xây dựng, và công nghiệp, có thể gây ra căng thẳng và ảnh hưởng đến sức khỏe tinh thần và thể chất.",
@@ -148,7 +148,7 @@ export const basic: IObjectData = {
   },
   4: {
     id: 4,
-    image: require("../assets/env/pollution4.png"),
+    image: require("../assets/env/pollution4.jpg"),
     title: "Ô nhiễm không khí",
     description:
       "Ô nhiễm không khí là sự thay đổi lớn trong thành phần của không khí, chủ yếu do khói, bụi, hơi hoặc các khí lạ được đưa vào không khí, có sự tỏa mùi, làm giảm tầm nhìn xa, gây biến đổi khí hậu, gây bệnh cho con người",
@@ -331,6 +331,65 @@ export const story: IObjectData = {
     ],
     image: require("../assets/env/story2.png"),
   },
+  3: {
+    id: 3,
+    title: "Sáng kiến 'Giảm thiểu rác thải nhựa'",
+    description:
+      "Một nhóm học sinh tiểu học tại một thành phố lớn nhận thấy số lượng rác thải nhựa ngày càng tăng, gây ô nhiễm nghiêm trọng cho môi trường, và họ đã khởi xướng phong trào giảm thiểu rác thải nhựa trong trường học.",
+    content: [
+      {
+        title: "Phong trào giảm rác thải nhựa",
+        body: [
+          "Nhóm học sinh đã cùng nhau lên kế hoạch hạn chế sử dụng nhựa dùng một lần trong trường. Các em thực hiện chiến dịch truyền thông để nâng cao nhận thức về tác hại của nhựa và kêu gọi các bạn đồng hành sử dụng các sản phẩm thay thế như bình nước cá nhân và hộp cơm thân thiện với môi trường.",
+          "Các hoạt động của phong trào bao gồm việc vận động các bạn học sinh và giáo viên sử dụng bình nước tái sử dụng thay vì chai nhựa, tổ chức các hội thảo về phân loại rác thải và ý nghĩa của việc tái chế nhựa.",
+          "Phong trào đã nhận được sự hỗ trợ từ ban giám hiệu và phụ huynh, giúp cung cấp các bình nước và hộp cơm thân thiện với môi trường cho học sinh và giáo viên. Sau một thời gian, trường học giảm đáng kể lượng rác thải nhựa, tạo nên môi trường học tập trong lành và bền vững hơn.",
+          "Phong trào không chỉ dừng lại trong trường học mà còn được nhiều trường khác áp dụng, giúp lan tỏa thông điệp về việc giảm thiểu rác thải nhựa và bảo vệ môi trường đến các trường học khác trong khu vực.",
+        ],
+        image: require("../assets/env/giam_nhua.jpg"),
+      },
+    ],
+    image: require("../assets/env/story3.png"),
+  },
+4: {
+    id: 4,
+    title: "Chương trình 'Cùng nhau trồng cây xanh'",
+    description:
+      "Chương trình trồng cây nhằm tạo ra không gian xanh mát, cải thiện chất lượng không khí và giúp bảo vệ môi trường tại địa phương.",
+    content: [
+      {
+        title: "Phong trào trồng cây của học sinh",
+        body: [
+          "Một nhóm học sinh tiểu học tại một ngôi trường nhỏ đã khởi xướng chương trình 'Cùng nhau trồng cây xanh' với mong muốn giúp khuôn viên trường và khu vực xung quanh trở nên xanh mát hơn. Các em được thầy cô hướng dẫn về tầm quan trọng của cây xanh đối với môi trường và khuyến khích tham gia vào việc chăm sóc cây.",
+          "Các hoạt động của chương trình bao gồm việc trồng cây trong sân trường, tưới cây hàng ngày, và thỉnh thoảng làm vệ sinh xung quanh khu vực trồng cây. Các em còn được chia thành từng nhóm nhỏ để phân công chăm sóc từng loại cây và ghi chép quá trình phát triển của chúng.",
+          "Với sự hỗ trợ từ các thầy cô và phụ huynh, các em học sinh được cung cấp cây giống và dụng cụ làm vườn phù hợp với lứa tuổi. Sau một thời gian, không gian trong sân trường trở nên xanh mát hơn với những hàng cây lớn nhỏ do chính tay các em chăm sóc, tạo nên một không gian học tập và vui chơi đầy sinh động.",
+          "Phong trào 'Cùng nhau trồng cây xanh' này nhanh chóng lan rộng, trở thành một hoạt động được nhiều lớp học trong trường tham gia, và truyền cảm hứng cho các trường tiểu học khác trong khu vực cũng tổ chức những chương trình trồng cây tương tự."
+        ],
+        
+        image: require("../assets/env/trong_cay.jpg"),
+      },
+    ],
+    image: require("../assets/env/story4.png"),
+  },
+5: {
+    id: 5,
+    title: "Sáng kiến 'Tái chế giấy học tập'",
+    description:
+      "Các học sinh nhận thấy rằng lượng giấy sử dụng trong trường học rất lớn và đã nảy ra sáng kiến tái chế giấy để bảo vệ môi trường.",
+    content: [
+      {
+        title: "Phong trào tái chế giấy của học sinh",
+        body: [
+          "Một nhóm học sinh đã nảy ra sáng kiến tái chế giấy học tập cũ thành các sản phẩm hữu ích như sổ tay và bìa sách. Nhóm tổ chức các buổi hướng dẫn tái chế cho các bạn trong trường, đồng thời lập một khu vực thu gom giấy cũ để phục vụ cho việc tái chế.",
+          "Các em học sinh tự tay làm ra các sản phẩm tái chế từ giấy đã qua sử dụng, và tặng những món đồ này cho các bạn có hoàn cảnh khó khăn hoặc sử dụng cho các hoạt động học tập trong trường.",
+          "Phong trào này không chỉ giúp giảm lượng rác thải giấy trong trường mà còn giáo dục các bạn học sinh về ý thức tiết kiệm tài nguyên và ý nghĩa của tái chế.",
+          "Sáng kiến tái chế giấy của nhóm học sinh đã thu hút sự quan tâm của nhiều trường học khác, giúp lan tỏa thông điệp bảo vệ môi trường và thúc đẩy ý thức bảo vệ tài nguyên thiên nhiên.",
+        ],
+        image: require("../assets/env/tai_che.jpg"),
+      },
+    ],
+    image: require("../assets/env/story5.jpg"),
+  },
+
 };
 
 export interface IActivity {

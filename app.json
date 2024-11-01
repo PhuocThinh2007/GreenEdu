@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.quangakiyama.expotemplate"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,7 +30,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "4f6bb4cb-69fb-48ab-909c-a200fcb5a1b6"
+        "projectId": "cc99bb84-4373-499f-97bb-e4eefcd895cd"
       }
     }
   }

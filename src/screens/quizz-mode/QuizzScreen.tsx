@@ -116,7 +116,7 @@ const QuizzScreen = () => {
             style={{
               width: "auto",
               height: 200,
-              backgroundColor: "#eee",
+              backgroundColor: "#fff",
             }}
             source={getRandomArray(Animation, 1)[0]}
           />
